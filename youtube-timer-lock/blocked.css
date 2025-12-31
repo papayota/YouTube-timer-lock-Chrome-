@@ -1,0 +1,134 @@
+/* blocked.css */
+/* ブロック画面のスタイル */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 48px 32px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    line-height: 1.3;
+}
+
+/* 残り時間表示 */
+.remaining-time {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 32px;
+    margin: 32px 0;
+}
+
+.time-label {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.time-display {
+    font-size: 64px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* メッセージボックス */
+.message-box {
+    margin: 32px 0;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.random-message {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* 作業に戻るボタン */
+.back-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #fff;
+    color: #667eea;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 24px auto;
+    display: block;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* ヒント */
+.hint {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 24px;
+    font-style: italic;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .time-display {
+        font-size: 48px;
+    }
+
+    .random-message {
+        font-size: 18px;
+    }
+
+    .content {
+        padding: 32px 24px;
+    }
+}

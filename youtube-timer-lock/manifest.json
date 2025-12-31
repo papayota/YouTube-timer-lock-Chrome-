@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Timer Lock",
+  "version": "1.0.0",
+  "description": "作業に集中するため、YouTubeをタイマー式でロックする拡張機能",
+  "permissions": [
+    "storage",
+    "alarms",
+    "declarativeNetRequest",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://youtu.be/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "declarative_net_request": {
+    "rule_resources": []
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
