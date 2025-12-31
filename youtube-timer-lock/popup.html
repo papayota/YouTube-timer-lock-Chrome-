@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Timer Lock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- ロックしていない時の画面 -->
+  <div id="unlocked-view" class="view">
+    <h1>⏱️ YouTube Timer Lock</h1>
+    <p class="description">作業に集中するため、YouTubeをロックします</p>
+    
+    <div class="timer-options">
+      <button class="timer-btn" data-duration="30">30分</button>
+      <button class="timer-btn" data-duration="60">60分</button>
+      <button class="timer-btn" data-duration="90">90分</button>
+      <button class="timer-btn" data-duration="120">120分</button>
+    </div>
+    
+    <button id="start-lock-btn" class="primary-btn" disabled>ロック開始</button>
+  </div>
+  
+  <!-- ロック中の画面 -->
+  <div id="locked-view" class="view hidden">
+    <h1>🔒 ロック中</h1>
+    <div class="remaining-time">
+      <div class="time-label">残り時間</div>
+      <div id="remaining-time" class="time-display">--:--</div>
+    </div>
+    
+    <button id="unlock-request-btn" class="secondary-btn">解除する…</button>
+  </div>
+  
+  <!-- 解除確認画面 -->
+  <div id="confirm-view" class="view hidden">
+    <h1>⚠️ 確認</h1>
+    <p class="warning-text">ロック中ですが本当に解除しますか？</p>
+    <div class="remaining-time">
+      <div class="time-label">残り時間</div>
+      <div id="confirm-remaining-time" class="time-display">--:--</div>
+    </div>
+    
+    <div class="button-group">
+      <button id="cancel-unlock-btn" class="secondary-btn">キャンセル</button>
+      <button id="confirm-unlock-btn" class="danger-btn">解除する（実行）</button>
+    </div>
+  </div>
+  
+  <div id="message" class="message hidden"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
